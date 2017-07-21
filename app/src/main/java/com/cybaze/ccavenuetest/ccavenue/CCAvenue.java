@@ -13,12 +13,12 @@ import com.cybaze.ccavenuetest.ccavenue.utility.AvenuesParams;
 public class CCAvenue {
 
     //Payment gateway details
-    private static final String MERCHANT_ID = "138917";
-    private static final String ACCESS_CODE = "AVEY71EF55BX39YEXB";
+    private static final String MERCHANT_ID = "2"; //REPLACE WITH YOUR MERCHANT ID
+    private static final String ACCESS_CODE = "4YRUXLSRO20O8NIH"; //REPLACE WITH YOUR ACCESS CODE
     private static final String CURRENCY = "INR";
-    private static final String REDIRECT_URL = "http://surabhicinemas.com/CC/ccavResponseHandler.php";
-    private static final String CANCEL_URL = "http://surabhicinemas.com/CC/ccavResponseHandler.php";
-    private static final String RSA_KEY_URL = "http://surabhicinemas.com/CC/GetRSA.php";
+    private static final String REDIRECT_URL = "http://122.182.6.216/merchant/ccavResponseHandler.jsp"; //REPLACE
+    private static final String CANCEL_URL = "http://122.182.6.216/merchant/ccavResponseHandler.jsp"; //REPLACE
+    private static final String RSA_KEY_URL = "http://122.182.6.216/merchant/GetRSA.jsp"; //REPLACE
 
 
     public static void startPayment(final Context context, final String orderId, String amount) {
