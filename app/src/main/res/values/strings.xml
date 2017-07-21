@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CCAvenueTest</string>
+    <string name="Buy">Buy</string>
+    <string name="cancel">CANCEL</string>
+    <string name="title_activity_status">Payment Status</string>
+    <string name="Pay">Pay</string>
+    <string-array name="selectAction">
+        <item>Resend OTP</item>
+        <item>Enter OTP Manually</item>
+    </string-array>
+</resources>
