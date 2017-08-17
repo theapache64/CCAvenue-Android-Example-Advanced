@@ -3,17 +3,17 @@ package com.cybaze.ccavenuetest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cybaze.ccavenuetest.ccavenue.CCAvenue;
+import com.cybaze.ccavenuetest.ccavenue.base.activities.BaseCCAvenueActivity;
 import com.cybaze.ccavenuetest.utils.PermissionUtils;
 
 import java.util.Locale;
+import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements PermissionUtils.Callback {
+public class MainActivity extends BaseCCAvenueActivity implements PermissionUtils.Callback {
 
     //Product details
     private static final String AMOUNT = "1";//Rs.1
@@ -53,14 +53,40 @@ public class MainActivity extends AppCompatActivity implements PermissionUtils.C
         findViewById(R.id.bPay).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CCAvenue.startPayment(MainActivity.this, "9895", AMOUNT);
+                startPayment(new Random().nextInt(10000) + "", AMOUNT);
             }
         });
     }
+
 
     @Override
     public void onPermissionDenial() {
         Toast.makeText(this, "Insufficient permission", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    @Override
+    public void onPaymentDeclined() {
+
+    }
+
+    @Override
+    public void onPaymentSuccess() {
+
+    }
+
+    @Override
+    public void onPaymentAborted() {
+
+    }
+
+    @Override
+    public void onPaymentAbortedByUser() {
+
+    }
+
+    @Override
+    public void onPaymentUnknown() {
+
     }
 }

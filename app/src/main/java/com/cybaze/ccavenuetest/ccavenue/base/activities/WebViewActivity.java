@@ -48,6 +48,12 @@ import java.util.TimerTask;
 
 public class WebViewActivity extends AppCompatActivity implements Communicator {
 
+    public static final String KEY_CALLBACK = "callback";
+    public static final int RQ_CODE = 1;
+    public static final int RESULT_TRANSACTION_SUCCESS = 0;
+    public static final int RESULT_TRANSACTION_DECLINED = 1;
+    public static final int RESULT_TRANSACTION_ABORTED = 2;
+    public static final int RESULT_TRANSACTION_UNKNOWN = 3;
     WebView myBrowser;
     WebSettings webSettings;
     private BroadcastReceiver mIntentReceiver;
@@ -119,24 +125,26 @@ public class WebViewActivity extends AppCompatActivity implements Communicator {
 
                 @JavascriptInterface
                 public void processHTML(String html) {
+
+
                     try {
                         // process the html as needed by the app
                         Log.v("Logs", "-------------- Process HTML : " + html);
-                        String status = null;
+                        int status = -1;
                         if (html.contains("Failure")) {
-                            status = "Transaction Declined!";
+                            status = RESULT_TRANSACTION_DECLINED;
                         } else if (html.contains("Success")) {
-                            status = "Transaction Successful!";
+                            status = RESULT_TRANSACTION_SUCCESS;
                         } else if (html.contains("Aborted")) {
-                            status = "Transaction Cancelled!";
+                            status = RESULT_TRANSACTION_ABORTED;
                         } else {
-                            status = "Status Not Known!";
+                            status = RESULT_TRANSACTION_UNKNOWN;
                         }
                         //Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(getApplicationContext(), StatusActivity.class);
-                        intent.putExtra("transStatus", status);
-                        startActivity(intent);
+                        setResult(status);
+                        finish();
+
                     } catch (Exception e) {
                         e.printStackTrace();
                         Log.v("Logs", "-------------- Error : " + e);
@@ -158,7 +166,7 @@ public class WebViewActivity extends AppCompatActivity implements Communicator {
                 public void onPageFinished(WebView view, String url) {
                     super.onPageFinished(myBrowser, url);
 
-                    if (url.contains("/ccavResponseHandler.jsp")) {
+                    if (url.contains("/ccavResponseHandler.php")) {
                         myBrowser.loadUrl("javascript:window.HTMLOUT.processHTML('<head>'+document.getElementsByTagName('html')[0].innerHTML+'</head>');");
                     }
 

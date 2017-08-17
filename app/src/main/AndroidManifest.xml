@@ -36,9 +36,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".ccavenue.base.activities.StatusActivity"
-            android:label="@string/title_activity_status" />
 
     </application>
 
