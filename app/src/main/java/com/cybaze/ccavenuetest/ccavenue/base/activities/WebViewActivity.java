@@ -48,8 +48,8 @@ import java.util.TimerTask;
 
 public class WebViewActivity extends AppCompatActivity implements Communicator {
 
-    public static final String KEY_CALLBACK = "callback";
     public static final int RQ_CODE = 1;
+
     public static final int RESULT_TRANSACTION_SUCCESS = 200;
     public static final int RESULT_TRANSACTION_DECLINED = 201;
     public static final int RESULT_TRANSACTION_ABORTED = 202;

@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.cybaze.ccavenuetest.ccavenue.base.callbacks.Callback;
 import com.cybaze.ccavenuetest.ccavenue.utility.AvenuesParams;
-import com.cybaze.ccavenuetest.utils.SecretConstants;
+import com.cybaze.ccavenuetest.ccavenue.utility.SecretConstants;
 
 /**
  * Created by theapache64 on 17/8/17.
