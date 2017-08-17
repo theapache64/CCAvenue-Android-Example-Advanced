@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity implements PermissionUtils.C
         setContentView(R.layout.activity_main);
 
         new PermissionUtils(this, this, this).begin();
-
-
     }
 
     @Override
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements PermissionUtils.C
         findViewById(R.id.bPay).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CCAvenue.startPayment(MainActivity.this, "123455", AMOUNT);
+                CCAvenue.startPayment(MainActivity.this, "9895", AMOUNT);
             }
         });
     }
