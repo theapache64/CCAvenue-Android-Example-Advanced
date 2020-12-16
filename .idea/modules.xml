@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CCAvenueTest.iml" filepath="$PROJECT_DIR$/CCAvenueTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/advanced.iml" filepath="$PROJECT_DIR$/advanced.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CCAvenue-Android-Example-Advanced.iml" filepath="$PROJECT_DIR$/.idea/CCAvenue-Android-Example-Advanced.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CCAvenue-Android-Example-Advanced.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CCAvenue-Android-Example-Advanced.app.iml" />
     </modules>
   </component>
 </project>
